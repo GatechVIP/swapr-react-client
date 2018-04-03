@@ -1,0 +1,75 @@
+.background {
+  background-color: #ededed;
+}
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+  background-color: #ededed;
+}
+.p {
+  color:#000000;
+}
+
+.box {
+  width: 50%;
+  background-color: #BDB76B;
+  padding-right: 10%;
+  padding-left: 10%;
+  padding-top: 40%;
+}
+.card {
+  margin: 2%;
+  background-color: #ededed;
+}
+#completed-block {
+  margin-top: 5%;
+  height: 100%;
+  width: 40%;
+  border-left: 1px solid #999999;
+}
+
+#completed-block h3 {
+  padding-bottom: 5%;
+}
+
+#header {
+  margin-bottom: 5%;
+}
+.main-page {
+  margin-top: 5%;
+}
+
+.MenuBar {
+  background-color: #BDB76B;
+  border-radius: 15px;
+}
+
+.menu_icon {
+  color: white;
+}
+
+.side-menu {
+  background-color: #999999;
+  height: 100%;
+  border-radius: 10px;
+}
+#todo-block {
+  margin-top: 5%;
+  height: 100%;
+  float: left;
+  /* background-color: #BDB76B; */
+  border-right: 1px solid #999999;
+}
+
+#todo-block h3 {
+  padding-bottom: 5%;
+}
+
+#title {
+  color: black;
+  margin-bottom: 10%;
+}
+
+ul {
+  text-align: left;
+}
