@@ -17,8 +17,8 @@ export default class GradeAssignment extends Component {
 class YoutubeVideo extends React.Component {
     render() {
       const opts = {
-        height: '390',
-        width: '640',
+        height: '720',
+        width: '1280',
         playerVars: { // https://developers.google.com/youtube/player_parameters
           autoplay: 1
         }
@@ -43,7 +43,7 @@ class YoutubeVideo extends React.Component {
 class SubmitGrade extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: '', organizationalStructure: 5, contentModels: 5, 
+    this.state = {comment: '', organizationalStructure: 5, contentModels: 5, 
       contentPredictionDiscussion: 5, contentOverall : 5, productionDelivery: 5};
 
     this.handleChange = this.handleChange.bind(this);
@@ -56,7 +56,7 @@ class SubmitGrade extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({comment: event.target.value});
   }
 
   handleChangeOS(event) {
@@ -90,9 +90,10 @@ class SubmitGrade extends React.Component {
   }
 
   handleSubmitGrade(event) {
-    alert('Submitted grade for User 1. Grade Given is ' + (this.state.organizationalStructure 
-      + this.state.contentModels + this.state.contentPredictionDiscussion + this.state.contentOverall
-      + this.state.productionDelivery) + '/25');
+    var sum = parseInt(this.state.organizationalStructure) + parseInt(this.state.contentModels)
+    + parseInt(this.state.contentPredictionDiscussion) + parseInt(this.state.contentOverall)
+    + parseInt(this.state.productionDelivery);
+    alert('Submitted grade for User 1. Grade Given is ' + sum + '/25. Extra comments: ' + this.state.comment);
     event.preventDefault();
     //Ajax post call
   }
@@ -123,7 +124,7 @@ class SubmitGrade extends React.Component {
           </h3>
           <h3>
             Comments:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+            <input type="text" value={this.state.comment} onChange={this.handleChange} />
           </h3>
         </div>
 
