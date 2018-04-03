@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import Dashboard from './views/Dashboard';
 import Home from './views/Home';
 import Login from './views/Login';
+import PrivateRoute from './lib/PrivateRoute';
 
 class Main extends Component {
     render() {
