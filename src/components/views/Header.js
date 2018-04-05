@@ -9,12 +9,14 @@ class Header extends Component {
                     <ul>
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/login'>Login</Link></li>
-                        <li><Link to='/dashboard'>Protected</Link></li>
+                        <li><Link to='/dashboard'>Dashboard</Link></li>
+                        <li><Link to='/submitAssignment'>Submit Assignment</Link></li>
                     </ul>
                 </nav>
             </div>
         );
     }
 }
+//<li><Link to='/dashboard'>Protected</Link></li>
 
 export default Header;

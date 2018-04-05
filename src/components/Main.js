@@ -3,7 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import Dashboard from './views/Dashboard';
 import Home from './views/Home';
 import Login from './views/Login';
-import PrivateRoute from './lib/PrivateRoute';
+import SubmitAssignment from './views/SubmitAssignment';
+//import PrivateRoute from './lib/PrivateRoute';
 
 class Main extends Component {
     render() {
@@ -12,6 +13,8 @@ class Main extends Component {
                 <Switch>
                     <Route exact path='/' component={Home}/>
                     <Route path='/login' component={Login}/>
+                    <Route path='/dashboard' component={Dashboard}/>
+                    <Route path='/submitAssignment' component={SubmitAssignment}/>
                 </Switch>
             </div>
         );
