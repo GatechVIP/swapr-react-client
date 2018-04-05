@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import Dashboard from './views/Dashboard';
 import Home from './views/Home';
 import Login from './views/Login';
+<<<<<<< HEAD
 import GradeAssignment from './views/GradeAssignment';
+=======
+import PrivateRoute from './lib/PrivateRoute';
+>>>>>>> 2e38ed771800515cf200a0c770156bbd6439d928
 
 class Main extends Component {
     render() {
