@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import '../../index.css';
+import '../stylesheets/index.css';
 import YouTube from 'react-youtube'
 
 export default class GradeAssignment extends Component {
@@ -21,15 +21,20 @@ class YoutubeVideo extends React.Component {
         width: '1280',
         playerVars: { // https://developers.google.com/youtube/player_parameters
           autoplay: 1
-        }
+        },
+          // border-left: 100% solid black;
       };
   
       return (
-        <YouTube
-          videoId="FkoEEqyXpIA"
-          opts={opts}
-          onReady={this._onReady}
-        />
+        <div id="wrapper">
+          <div id="yourdiv">
+            <YouTube
+              videoId="FkoEEqyXpIA"
+              opts={opts}
+              onReady={this._onReady}
+            />
+          </div>
+        </div>
       );
     }
   

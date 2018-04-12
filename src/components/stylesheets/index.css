@@ -73,3 +73,9 @@ body {
 ul {
   text-align: left;
 }
+
+.video {
+  width:800px;
+  margin-right:auto;
+  margin-left:auto;
+}

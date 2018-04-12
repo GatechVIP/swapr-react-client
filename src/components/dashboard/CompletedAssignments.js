@@ -1,6 +1,6 @@
 import React from 'react';
 //import ReactDOM from 'react-dom';
-import '../../styles/index.css';
+import '../stylesheets/index.css';
 import AssignmentItem from './AssignmentItem';
 
 export default class CompletedAssignments extends React.Component {

@@ -10,9 +10,9 @@ const Home = () => (
 export default Home;
 */
 import React from 'react';
-import ToDoAssignments from '../components/dashboard/ToDoAssignments';
-import CompletedAssignments from '../components/dashboard/CompletedAssignments';
-import '../../stylesindex.css';
+import ToDoAssignments from '../dashboard/ToDoAssignments';
+import CompletedAssignments from '../dashboard/CompletedAssignments';
+import '../stylesheets/index.css';
 
 class Dashboard extends React.Component {
   constructor() {
