@@ -48,10 +48,24 @@ class YoutubeVideo extends React.Component {
 class SubmitGrade extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {comment: '', organizationalStructure: 5, contentModels: 5, 
-      contentPredictionDiscussion: 5, contentOverall : 5, productionDelivery: 5};
+    this.state = {
+      commentOS : '',
+      commentCM : '',
+      commentCPD : '',
+      commentCO : '',
+      commentPD : '',
+      organizationalStructure : 5,
+      contentModels : 5,
+      contentPredictionDiscussion : 5,
+      contentOverall : 5,
+      productionDelivery : 5
+    };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeCommentOS = this.handleChangeCommentOS.bind(this);
+    this.handleChangeCommentCM = this.handleChangeCommentCM.bind(this);
+    this.handleChangeCommentCPD = this.handleChangeCommentCPD.bind(this);
+    this.handleChangeCommentCO = this.handleChangeCommentCO.bind(this);
+    this.handleChangeCommentPD = this.handleChangeCommentPD.bind(this);
     this.handleSubmitGrade = this.handleSubmitGrade.bind(this);
     this.handleChangeOS = this.handleChangeOS.bind(this);
     this.handleChangeCM = this.handleChangeCM.bind(this);
@@ -60,45 +74,53 @@ class SubmitGrade extends React.Component {
     this.handleChangePD = this.handleChangePD.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({comment: event.target.value});
+  handleChangeCommentOS(event) {
+    this.setState({commentOS: event.target.value});
+  }
+
+  handleChangeCommentCM(event) {
+    this.setState({commentCM: event.target.value});
+  }
+
+  handleChangeCommentCPD(event) {
+    this.setState({commentCPD: event.target.value});
+  }
+
+  handleChangeCommentCO(event) {
+    this.setState({commentCO: event.target.value});
+  }
+
+  handleChangeCommentPD(event) {
+    this.setState({commentPD: event.target.value});
   }
 
   handleChangeOS(event) {
-    if (event.target.value <= 5 && event.target.value > 0) {
-      this.setState({organizationalStructure: event.target.value});
-    }
+      this.setState({organizationalStructure: event.target.value.charAt(0)});
   }
 
   handleChangeCM(event) {
-    if (event.target.value <= 5 && event.target.value > 0) {
-      this.setState({contentModels: event.target.value});
-    }
+      this.setState({contentModels: event.target.value.charAt(0)});
   }
   
   handleChangeCPD(event) {
-    if (event.target.value <= 5 && event.target.value > 0) {
-      this.setState({contentPredictionDiscussion: event.target.value});
-    }
+      this.setState({contentPredictionDiscussion: event.target.value.charAt(0)});
   }
 
   handleChangeCO(event) {
-    if (event.target.value <= 5 && event.target.value > 0) {
-      this.setState({contentOverall: event.target.value});
-    }
+      this.setState({contentOverall: event.target.value.charAt(0)});
   }
 
   handleChangePD(event) {
-    if (event.target.value <= 5 && event.target.value > 0) {
-      this.setState({productionDelivery: event.target.value});
-    }
+      this.setState({productionDelivery: event.target.value.charAt(0)});
   }
 
   handleSubmitGrade(event) {
     var sum = parseInt(this.state.organizationalStructure) + parseInt(this.state.contentModels)
     + parseInt(this.state.contentPredictionDiscussion) + parseInt(this.state.contentOverall)
     + parseInt(this.state.productionDelivery);
-    alert('Submitted grade for User 1. Grade Given is ' + sum + '/25. Extra comments: ' + this.state.comment);
+    alert('Submitted grade for User 1. Grade Given is ' + sum + '/25. OS Comment: ' + this.state.commentOS
+        + ' CM Comment: ' + this.state.commentCM + ' CPD Comment: ' + this.state.commentCPD + ' CO Comment: '
+        + this.state.commentCO + ' PD Comment: ' + this.state.commentPD);
     event.preventDefault();
     //Ajax post call
   }
@@ -108,31 +130,87 @@ class SubmitGrade extends React.Component {
       <form onSubmit={this.handleSubmitGrade}>
         <div id = ".main-page" className = "col-lg-6">
           <h3>
-            Organizational Structure:
-            <input type="integer" value={this.state.organizationalStructure} onChange={this.handleChangeOS} />
+            <p>
+              Organizational Structure:
+            </p>
+            <select onChange={this.handleChangeOS}>
+              <option>5 (Excellent)</option>
+              <option>4 (Great)</option>
+              <option>3 (Good)</option>
+              <option>2 (Fair)</option>
+              <option>1 (Poor)</option>
+            </select>
+            <p>Comments: </p>
           </h3>
+          <textarea rows="4" cols="50" value={this.state.commentOS} onChange={this.handleChangeCommentOS} >
+            Comments
+          </textarea>
           <h3>
-            Content Models:
-            <input type="integer" value={this.state.contentModels} onChange={this.handleChangeCM} />
+            <p>
+              Content Models:
+            </p>
+            <select onChange={this.handleChangeCM}>
+              <option>5 (Excellent)</option>
+              <option>4 (Great)</option>
+              <option>3 (Good)</option>
+              <option>2 (Fair)</option>
+              <option>1 (Poor)</option>
+            </select>
+            <p>Comments: </p>
           </h3>
+          <textarea rows="4" cols="50" value={this.state.commentCM} onChange={this.handleChangeCommentCM} >
+            Comments
+          </textarea>
           <h3>
-            Content Prediction Discussion:
-            <input type="integer" value={this.state.contentPredictionDiscussion} onChange={this.handleChangeCPD} />
+            <p>
+              Content Prediction Discussion:
+            </p>
+            <select onChange={this.handleChangeCPD}>
+              <option>5 (Excellent)</option>
+              <option>4 (Great)</option>
+              <option>3 (Good)</option>
+              <option>2 (Fair)</option>
+              <option>1 (Poor)</option>
+            </select>
+            <p>Comments: </p>
           </h3>
+          <textarea rows="4" cols="50" value={this.state.commentCPD} onChange={this.handleChangeCommentCPD} >
+            Comments
+          </textarea>
           <h3>
-            Content Overall:
-            <input type="integer" value={this.state.contentOverall} onChange={this.handleChangeCO} />
+            <p>
+              Content Overall:
+            </p>  
+            <select onChange={this.handleChangeCO}>
+              <option>5 (Excellent)</option>
+              <option>4 (Great)</option>
+              <option>3 (Good)</option>
+              <option>2 (Fair)</option>
+              <option>1 (Poor)</option>
+            </select>
+            <p>Comments: </p>
           </h3>
+          <textarea rows="4" cols="50" value={this.state.commentCO} onChange={this.handleChangeCommentCO} >
+            Comments
+          </textarea>
           <h3>
-            Production Delivery:
-            <input type="integer" value={this.state.productionDelivery} onChange={this.handleChangePD} />
+            <p>
+              Production Delivery:
+            </p>  
+            <select onChange={this.handleChangePD}>
+              <option>5 (Excellent)</option>
+              <option>4 (Great)</option>
+              <option>3 (Good)</option>
+              <option>2 (Fair)</option>
+              <option>1 (Poor)</option>
+            </select>
+            <p>Comments: </p>
           </h3>
-          <h3>
-            Comments:
-            <input type="text" value={this.state.comment} onChange={this.handleChange} />
-          </h3>
+          <textarea rows="4" cols="50" value={this.state.commentPD} onChange={this.handleChangeCommentPD} >
+            Comments
+          </textarea>
         </div>
-
+        <p></p>
         <input type="submit" value="Submit Evaluation"/>
       </form>
     );
