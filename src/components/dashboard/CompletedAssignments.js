@@ -16,23 +16,13 @@ componentWillMount(){
   //Later this will take in from main page state through props
   this.setState({assignmentList: [
     {
-      title: "Velocity1",
-      dueDate: "March 3",
+      title: "Position1",
+      dueDate: "April 16",
       dueTime: "12:00pm"
     },
     {
-      title: "Velocity1",
-      dueDate: "March 3",
-      dueTime: "12:00pm"
-    },
-    {
-      title: "Velocity1",
-      dueDate: "March 3",
-      dueTime: "12:00pm"
-    },
-    {
-      title: "Velocity1",
-      dueDate: "March 3",
+      title: "Position2",
+      dueDate: "April 19",
       dueTime: "12:00pm"
     }
   ]}
@@ -40,14 +30,16 @@ componentWillMount(){
 }
 render(){
     return (
-      <div id="completed-block" className = "col-lg-5">
-        <h3 align="center">Completed</h3>
-      <div>
-          {this.state.assignmentList.map((assignment) => {
-            return(<AssignmentItem assignment={assignment}/>)
-          })}
-      </div>
-      </div>
+        <div id="completed-block" className = "col-lg-5">
+	        <h3 align="center">Completed</h3>
+	      	<div>
+	      	    <table style={{"table-layout":"fixed"}}>
+	                {this.state.assignmentList.map((assignment) => {
+	                return(<AssignmentItem assignment={assignment}/>)
+	                })}
+	            </table>
+	        </div>
+        </div>
     );
   }
 }

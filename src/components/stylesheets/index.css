@@ -24,7 +24,9 @@ body {
 #completed-block {
   margin-top: 5%;
   height: 100%;
-  width: 40%;
+  width: 400px;
+  float: left;
+  background-color: #BDB76B;
   border-left: 1px solid #999999;
 }
 
@@ -35,6 +37,11 @@ body {
 #header {
   margin-bottom: 5%;
 }
+
+inline {
+  display: inline-block;
+}
+
 .main-page {
   margin-top: 5%;
 }
@@ -56,8 +63,9 @@ body {
 #todo-block {
   margin-top: 5%;
   height: 100%;
+  width: 400px;
   float: left;
-  /* background-color: #BDB76B; */
+  background-color: #BDB76B; 
   border-right: 1px solid #999999;
 }
 

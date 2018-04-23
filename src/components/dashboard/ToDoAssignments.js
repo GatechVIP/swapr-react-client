@@ -23,18 +23,18 @@ componentWillMount(){
       dueTime: "12:00pm"
     },
     {
-      title: "Velocity1",
-      dueDate: "March 3",
+      title: "Velocity2",
+      dueDate: "March 6",
       dueTime: "12:00pm"
     },
     {
-      title: "Velocity1",
-      dueDate: "March 3",
+      title: "Velocity3",
+      dueDate: "March 9",
       dueTime: "12:00pm"
     },
     {
-      title: "Velocity1",
-      dueDate: "March 3",
+      title: "Velocity4",
+      dueDate: "March 12",
       dueTime: "12:00pm"
     }
   ]}
@@ -42,15 +42,15 @@ componentWillMount(){
 }
 render(){
     return (
-      <div id="todo-block" className = "col-lg-5">
-
-          <h3 align="center">Assignments</h3>
-
-        <div>
-            {this.state.assignmentList.map((assignment) => {
-              return(<AssignmentItem assignment={assignment}/>);
-            })}
-        </div>
+      <div id="completed-block" className = "col-lg-5">
+          <h3 align="center">To-Do</h3>
+          <div>
+              <table style={{"table-layout":"fixed"}}>
+                  {this.state.assignmentList.map((assignment) => {
+                  return(<tr><AssignmentItem assignment={assignment}/></tr>)
+                  })}
+              </table>
+          </div>
       </div>
     );
   }
