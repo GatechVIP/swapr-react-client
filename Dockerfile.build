@@ -1,0 +1,18 @@
+# multi-stage build -- build client, then image with build client
+
+# Use node image to build client
+FROM node:8.7.0
+RUN npm install yarn 
+RUN mkdir -p /data/node_modules
+WORKDIR /data
+COPY package.json yarn.lock /data/
+RUN yarn --pure-lockfile
+ENV PATH /data/node_modules/.bin:$PATH
+RUN mkdir -p /data/src
+ADD . /data/src
+WORKDIR /data/src
+RUN yarn build
+
+# Use nginx image to host built files
+FROM nginx:alpine
+COPY --from=0 /data/src/build /usr/share/nginx/html
