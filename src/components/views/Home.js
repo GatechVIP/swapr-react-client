@@ -4,7 +4,7 @@ class Home extends Component {
     render() {
         return (
             <div className="Home">
-                <h1>Welcome to PHYS 2211, SWAPR style</h1>
+                <h1>Welcome to SWAPR: PHYS 2211</h1>
             </div>
         );
     }

@@ -6,7 +6,7 @@ export default class GradeAssignment extends Component {
     render() {
         return (
             <div id = "submitColumn" classname = "col-lg-5">
-              <h1>Now grading User 1's Lab1</h1>
+              <h3>Now grading User 1's Lab1</h3>
               <YoutubeVideo />
               <SubmitGrade />
             </div>
@@ -128,10 +128,10 @@ class SubmitGrade extends React.Component {
     return (
       <form onSubmit={this.handleSubmitGrade}>
         <div id = ".main-page" className = "col-lg-6">
-          <h3>
-            <p>
-              Organizational Structure:
-            </p>
+          <p>
+            Organizational Structure:
+          </p>
+          <p>
             <select onChange={this.handleChangeOS}>
               <option>5 (Excellent)</option>
               <option>4 (Great)</option>
@@ -139,15 +139,17 @@ class SubmitGrade extends React.Component {
               <option>2 (Fair)</option>
               <option>1 (Poor)</option>
             </select>
-            <p>Comments: </p>
-          </h3>
-          <textarea rows="4" cols="50" value={this.state.commentOS} onChange={this.handleChangeCommentOS} >
-            Comments
-          </textarea>
-          <h3>
-            <p>
-              Content Models:
-            </p>
+          </p>
+          <p>Comments: </p>
+          <p>
+            <textarea rows="4" cols="50" value={this.state.commentOS} onChange={this.handleChangeCommentOS} >
+              Comments
+            </textarea>
+          </p>
+          <p>
+            Content Models:
+          </p>
+          <p>
             <select onChange={this.handleChangeCM}>
               <option>5 (Excellent)</option>
               <option>4 (Great)</option>
@@ -155,15 +157,17 @@ class SubmitGrade extends React.Component {
               <option>2 (Fair)</option>
               <option>1 (Poor)</option>
             </select>
-            <p>Comments: </p>
-          </h3>
-          <textarea rows="4" cols="50" value={this.state.commentCM} onChange={this.handleChangeCommentCM} >
-            Comments
-          </textarea>
-          <h3>
-            <p>
-              Content Prediction Discussion:
-            </p>
+          </p>
+          <p>Comments: </p>
+          <p>
+            <textarea rows="4" cols="50" value={this.state.commentCM} onChange={this.handleChangeCommenCM} >
+              Comments
+            </textarea>
+          </p>
+          <p>
+            Content Prediction Discussion:
+          </p>
+          <p>
             <select onChange={this.handleChangeCPD}>
               <option>5 (Excellent)</option>
               <option>4 (Great)</option>
@@ -171,15 +175,17 @@ class SubmitGrade extends React.Component {
               <option>2 (Fair)</option>
               <option>1 (Poor)</option>
             </select>
-            <p>Comments: </p>
-          </h3>
-          <textarea rows="4" cols="50" value={this.state.commentCPD} onChange={this.handleChangeCommentCPD} >
-            Comments
-          </textarea>
-          <h3>
-            <p>
-              Content Overall:
-            </p>  
+          </p>
+          <p>Comments: </p>
+          <p>
+            <textarea rows="4" cols="50" value={this.state.commentCPD} onChange={this.handleChangeCommentCPD} >
+              Comments
+            </textarea>
+          </p>
+          <p>
+            Content Overall:
+          </p>
+          <p>
             <select onChange={this.handleChangeCO}>
               <option>5 (Excellent)</option>
               <option>4 (Great)</option>
@@ -187,15 +193,17 @@ class SubmitGrade extends React.Component {
               <option>2 (Fair)</option>
               <option>1 (Poor)</option>
             </select>
-            <p>Comments: </p>
-          </h3>
-          <textarea rows="4" cols="50" value={this.state.commentCO} onChange={this.handleChangeCommentCO} >
-            Comments
-          </textarea>
-          <h3>
-            <p>
-              Production Delivery:
-            </p>  
+          </p>
+          <p>Comments: </p>
+          <p>
+            <textarea rows="4" cols="50" value={this.state.commentCO} onChange={this.handleChangeCommentCO} >
+              Comments
+            </textarea>
+          </p>
+          <p>
+            Production Delivery:
+          </p>
+          <p>
             <select onChange={this.handleChangePD}>
               <option>5 (Excellent)</option>
               <option>4 (Great)</option>
@@ -203,11 +211,13 @@ class SubmitGrade extends React.Component {
               <option>2 (Fair)</option>
               <option>1 (Poor)</option>
             </select>
-            <p>Comments: </p>
-          </h3>
-          <textarea rows="4" cols="50" value={this.state.commentPD} onChange={this.handleChangeCommentPD} >
-            Comments
-          </textarea>
+          </p>
+          <p>Comments: </p>
+          <p>
+            <textarea rows="4" cols="50" value={this.state.commentPD} onChange={this.handleChangeCommentPD} >
+              Comments
+            </textarea>
+          </p>
         </div>
         <p></p>
         <input type="submit" value="Submit Evaluation"/>

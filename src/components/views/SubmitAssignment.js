@@ -72,11 +72,25 @@ class Upload extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <label>
-                    Video Submission:
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Submit" />
+                <table>
+                    <tr>
+                        <td>
+                            <p>
+                                Video Submission:
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <input type="text" value={this.state.value} onChange={this.handleChange} />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Submit" />
+                        </td>
+                    </tr>
+                </table>
             </form>
         );
     }
