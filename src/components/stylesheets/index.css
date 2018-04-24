@@ -24,7 +24,8 @@ body {
 #completed-block {
   margin-top: 5%;
   height: 100%;
-  width: 40%;
+  display: inline-block;
+  max-width: 33%;
   float: left;
   border-right: 1px solid #999999;
 }
@@ -38,6 +39,14 @@ body {
 }
 .main-page {
   margin-top: 5%;
+}
+
+.App {
+  margin: .5%;
+}
+
+.Main {
+  margin-top: .5%;
 }
 
 .MenuBar {
@@ -57,6 +66,8 @@ body {
 #todo-block {
   margin-top: 5%;
   height: 100%;
+  display: inline-block;
+  max-width: 33%;
   float: left;
    /*background-color: #BDB76B; */
   border-right: 1px solid #999999;
@@ -64,8 +75,9 @@ body {
 #grades-block {
   margin-top: 5%;
   height: 100%;
-  width: 40%;
+  max-width: 33%;
   float: left;
+  display: inline-block;
 }
 
 #todo-block h3 {

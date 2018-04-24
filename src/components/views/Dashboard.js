@@ -57,7 +57,7 @@ class Dashboard extends Component {
                     <div className="col-lg-9">
                         <div className="row justify-content-md-center" id="header"><h1 id="dashboard-title">Dashboard</h1></div>
                         <div className = "row justify-content-md-center">
-                            <ToDoAssignments/>
+                            <ToDoAssignments style={{"align":"left"}}/>
                             <CompletedAssignments/>
                             <Grades/>
                         </div>

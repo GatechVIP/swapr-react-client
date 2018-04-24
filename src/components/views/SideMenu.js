@@ -13,9 +13,6 @@ export default class SideMenu extends React.Component {
                     <li class="nav-item">
                         <a className="navbar-brand" id="title">SWAPR: PHYS 2211</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="">Dashboard</a>
-                    </li>
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/login'>Login</Link></li>
                     <li><Link to='/gradeAssignment'>Grade Assignment</Link></li>

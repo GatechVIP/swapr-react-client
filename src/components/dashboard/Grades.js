@@ -38,7 +38,7 @@ render(){
     return (
       <div id="grades-block" className = "col-lg-5">
           <div>
-            <h3 className="justify-content-md-center">Grades</h3>
+            <h3>Grades</h3>
           </div>
           <div>
             {this.state.gradesList.map((grade) => {

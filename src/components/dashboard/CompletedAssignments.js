@@ -41,7 +41,7 @@ render(){
     return (
       <div id="completed-block" className = "col-lg-5">
       <div>
-        <h3 className="justify-content-md-center">Completed</h3>
+        <h3>Completed</h3>
       </div>
       <div>
           {this.state.assignmentList.map((assignment) => {
