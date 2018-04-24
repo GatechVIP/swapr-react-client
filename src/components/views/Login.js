@@ -1,12 +1,14 @@
 import React, { Component }  from 'react';
-//import { Redirect } from 'react-router-dom';
-
-var isAuthenticated = false;
+import { connect } from 'react-redux';
+import { authActions } from '../lib/actions/authActions';
 
 class Login extends Component {
     constructor(props) {
         super(props);
-        this.state = {username: '', password: ''};
+
+        this.props.dispatch(authActions.logout());
+
+        this.state = {username: '', password: '', submitted: false};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,27 +20,18 @@ class Login extends Component {
 
     handleSubmit(event) {
         // Send this.state.username and this.state.password as parameters for a login HTTP request
-        /*fetch('swapr-dev.vip.gatech.edu:8443/login?username='+this.state.username+'&password='+this.state.password)
-            .then((err, response) => (err, response.json()))
-            .then((err, responseJson) => {
-                if (err)
-                    alert("Login failed, please try again");
-                else {
-                    const location = this.props.location;
-                    if (location.state && location.state.nextPathname)
-                        browserHistory.push(location.state.nextPathname)
-                        <Redirect to=location.state.nextPathname />
-                    else
-                        <Redirect to='/dashboard' />
-                }
-            }).catch((err) => {
-                // Handle error
-                console.log(err);
-            });*/
-        isAuthenticated = true;
+        event.preventDefault();
+
+        this.setState({ submitted: true });
+        const { username, password } = this.state;
+        const { dispatch } = this.props;
+        if (username && password) {
+            dispatch(authActions.login(username, password));
+        }
     }
 
     render() {
+        const { username, password, submitted } = this.state;
         return (
             <div className="Login">
                 <form onSubmit={this.handleSubmit}>
@@ -48,7 +41,10 @@ class Login extends Component {
                                 <label>Username:</label>
                             </td>
                             <td>
-                                <input type="text" name="username" onChange={this.handleChange} />
+                                <input type="text" name="username" value={username} onChange={this.handleChange} />
+                                {submitted && !username &&
+                                    <div>Username is required</div>
+                                }
                             </td>
                         </tr>
                         <tr>
@@ -56,7 +52,10 @@ class Login extends Component {
                                 <label>Password:</label>
                             </td>
                             <td>
-                                <input type="text" name="password" onChange={this.handleChange} />
+                                <input type="text" name="password" value={password} onChange={this.handleChange} />
+                                {submitted && !password &&
+                                    <div>Password is required</div>
+                                }
                             </td>
                         </tr>
                         <input type="submit" value="Log in" />
@@ -67,8 +66,12 @@ class Login extends Component {
     }
 }
 
-export function isLoggedIn() {
-    return isAuthenticated;
+function mapStateToProps(state) {
+    const { loggingIn } = state.auth;
+    return {
+        loggingIn
+    };
 }
 
-export default Login;
+const connectedLogin = connect(mapStateToProps)(Login);
+export { connectedLogin as Login };

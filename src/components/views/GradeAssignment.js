@@ -1,8 +1,10 @@
 import React, { Component }  from 'react';
-import '../stylesheets/index.css';
+import { connect } from 'react-redux';
 import YouTube from 'react-youtube'
 
-export default class GradeAssignment extends Component {
+import '../stylesheets/index.css';
+
+class GradeAssignment extends Component {
     render() {
         return (
             <div id = "submitColumn" classname = "col-lg-5">
@@ -14,7 +16,7 @@ export default class GradeAssignment extends Component {
     }
 }
 
-class YoutubeVideo extends React.Component {
+class YoutubeVideo extends Component {
     render() {
       const opts = {
         playerVars: { // https://developers.google.com/youtube/player_parameters
@@ -44,7 +46,7 @@ class YoutubeVideo extends React.Component {
   
   }
 
-class SubmitGrade extends React.Component {
+class SubmitGrade extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -225,3 +227,6 @@ class SubmitGrade extends React.Component {
     );
   }
 }
+
+const connectedGradeAssignment = connect()(GradeAssignment);
+export { connectedGradeAssignment as GradeAssignment };

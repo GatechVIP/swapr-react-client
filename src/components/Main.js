@@ -1,27 +1,28 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Dashboard from './views/Dashboard';
-import Home from './views/Home';
-import Login from './views/Login';
-import GradeAssignment from './views/GradeAssignment';
-import PrivateRoute from './lib/PrivateRoute';
-import SubmitAssignment from './views/SubmitAssignment';
-//import PrivateRoute from './lib/PrivateRoute';
+//import { connect } from 'react-redux';
+
+import { Dashboard } from './views/Dashboard';
+import { Login } from './views/Login';
+import { GradeAssignment } from './views/GradeAssignment';
+import { PrivateRoute } from './lib/helpers/PrivateRoute';
+import { SubmitAssignment } from './views/SubmitAssignment';
 
 class Main extends Component {
     render() {
         return (
             <div className="Main">
                 <Switch>
-                    <Route exact path='/' component={Home}/>
+                    <PrivateRoute exact path='/' component={Dashboard}/>
+                    <PrivateRoute exact path='/gradeassignment' component={GradeAssignment}/>
+                    <PrivateRoute exact path='/submit' component={SubmitAssignment}/>
                     <Route path='/login' component={Login}/>
-                    <Route path='/gradeassignment' component={GradeAssignment}/>
-                    <Route path='/dashboard' component={Dashboard}/>
-                    <Route path='/submit' component={SubmitAssignment}/>
                 </Switch>
             </div>
         );
     }
 }
 
-export default Main;
+//const connectedMain = connect()(Main);
+//export { connectedMain as Main };
+export { Main };

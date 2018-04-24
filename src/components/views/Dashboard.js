@@ -1,23 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import ToDoAssignments from '../dashboard/ToDoAssignments';
 import CompletedAssignments from '../dashboard/CompletedAssignments';
 import Grades from '../dashboard/Grades';
 import '../stylesheets/index.css';
 
-/*import React from 'react';
-
-const Home = () => (
-    <div>
-        <h1>Hello, Welcome to SWAPR 2211</h1>
-    </div>
-);
-
-export default Home;
-*/
 class Dashboard extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             todolist:[],
             completedlist:[],
@@ -71,4 +62,6 @@ class Dashboard extends Component {
 /*<div className="col-lg-3">
     <SideMenu/>
 </div>*/
-export default Dashboard;
+//export default Dashboard;
+const connectedDashboard = connect()(Dashboard);
+export { connectedDashboard as Dashboard };

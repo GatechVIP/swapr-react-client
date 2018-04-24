@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import '../stylesheets/index.css';
+import { connect } from 'react-redux';
 import YouTube from 'react-youtube';
+
+import '../stylesheets/index.css';
 
 // Require stylesheets as needed
 // must run npm install --save bootstrap before importing
 //must change class to className
 
-class Assignment extends Component {
+class SubmitAssignment extends Component {
     render() {
         return(
             <div className="MainPage">
@@ -96,4 +98,5 @@ class Upload extends Component {
     }
 }
 
-export default Assignment;
+const connectedSubmitAssignment = connect()(SubmitAssignment);
+export { connectedSubmitAssignment as SubmitAssignment };

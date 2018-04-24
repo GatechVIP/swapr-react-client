@@ -1,7 +1,6 @@
 import React from 'react';
 
 import '../stylesheets/index.css';
-//import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import {Link} from "react-router-dom";
 
 export default class AssignmentItem extends React.Component {
