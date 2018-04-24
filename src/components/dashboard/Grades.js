@@ -36,14 +36,14 @@ componentWillMount(){
 }
 render(){
     return (
-      <div id="completed-block" className = "col-lg-5">
-          <h3 align="center">Grades</h3>
+      <div id="grades-block" className = "col-lg-5">
           <div>
-              <table style={{"table-layout":"fixed"}}>
-                  {this.state.gradesList.map((grade) => {
-                  return(<GradeItem grade={grade}/>)
-                  })}
-              </table>
+            <h3 className="justify-content-md-center">Grades</h3>
+          </div>
+          <div>
+            {this.state.gradesList.map((grade) => {
+              return(<GradeItem grade={grade}/>)
+            })}
           </div>
       </div>
     );

@@ -9,7 +9,6 @@ constructor(props) {
   this.state = {
     assignmentList:[]
   };
-
 }
 
 componentWillMount(){
@@ -24,22 +23,32 @@ componentWillMount(){
       title: "Position2",
       dueDate: "April 19",
       dueTime: "12:00pm"
+    },
+    {
+      title: "Position3",
+      dueDate: "April 24",
+      dueTime: "12:00pm"
+    },
+    {
+      title: "Position4",
+      dueDate: "April 28",
+      dueTime: "12:00pm"
     }
   ]}
 );
 }
 render(){
     return (
-        <div id="completed-block" className = "col-lg-5">
-	        <h3 align="center">Completed</h3>
-	      	<div>
-	      	    <table style={{"table-layout":"fixed"}}>
-	                {this.state.assignmentList.map((assignment) => {
-	                return(<AssignmentItem assignment={assignment}/>)
-	                })}
-	            </table>
-	        </div>
-        </div>
+      <div id="completed-block" className = "col-lg-5">
+      <div>
+        <h3 className="justify-content-md-center">Completed</h3>
+      </div>
+      <div>
+          {this.state.assignmentList.map((assignment) => {
+            return(<AssignmentItem assignment={assignment}/>)
+          })}
+      </div>
+      </div>
     );
   }
 }

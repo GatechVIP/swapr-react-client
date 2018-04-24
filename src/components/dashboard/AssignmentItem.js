@@ -7,16 +7,18 @@ import {Link} from "react-router-dom";
 export default class AssignmentItem extends React.Component {
   render(){
     return(
-      <tr>
-        <th style={{"width":"200px"}}>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-6">
             {this.props.assignment.dueDate}
-        </th>
-        <th style={{"width":"200px"}}>
-            <Link to="/submit">
+          </div>
+          <div class="col-lg-6" align="right">
+            <Link to="/Assignment">
               <p>{this.props.assignment.title}</p>
             </Link>
-        </th>
-      </tr>
+          </div>
+        </div>
+      </div>
     );
   }
 }

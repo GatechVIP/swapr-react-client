@@ -42,15 +42,15 @@ componentWillMount(){
 }
 render(){
     return (
-      <div id="completed-block" className = "col-lg-5">
-          <h3 align="center">To-Do</h3>
-          <div>
-              <table style={{"table-layout":"fixed"}}>
-                  {this.state.assignmentList.map((assignment) => {
-                  return(<tr><AssignmentItem assignment={assignment}/></tr>)
-                  })}
-              </table>
-          </div>
+      <div id="todo-block" className = "col-lg-5">
+        <div>
+          <h3 className="justify-content-md-center">Assignments</h3>
+        </div>
+        <div>
+            {this.state.assignmentList.map((assignment) => {
+              return(<AssignmentItem assignment={assignment}/>);
+            })}
+        </div>
       </div>
     );
   }

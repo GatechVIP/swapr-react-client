@@ -24,10 +24,9 @@ body {
 #completed-block {
   margin-top: 5%;
   height: 100%;
-  width: 400px;
+  width: 40%;
   float: left;
-  background-color: #BDB76B;
-  border-left: 1px solid #999999;
+  border-right: 1px solid #999999;
 }
 
 #completed-block h3 {
@@ -37,11 +36,6 @@ body {
 #header {
   margin-bottom: 5%;
 }
-
-inline {
-  display: inline-block;
-}
-
 .main-page {
   margin-top: 5%;
 }
@@ -56,17 +50,22 @@ inline {
 }
 
 .side-menu {
-  background-color: #999999;
+  background-color: #d3d3d3;
   height: 100%;
   border-radius: 10px;
 }
 #todo-block {
   margin-top: 5%;
   height: 100%;
-  width: 400px;
   float: left;
-  background-color: #BDB76B; 
+   /*background-color: #BDB76B; */
   border-right: 1px solid #999999;
+}
+#grades-block {
+  margin-top: 5%;
+  height: 100%;
+  width: 40%;
+  float: left;
 }
 
 #todo-block h3 {
@@ -80,10 +79,4 @@ inline {
 
 ul {
   text-align: left;
-}
-
-.video {
-  width:800px;
-  margin-right:auto;
-  margin-left:auto;
 }

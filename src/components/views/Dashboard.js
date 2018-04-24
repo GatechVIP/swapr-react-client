@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ToDoAssignments from '../dashboard/ToDoAssignments';
 import CompletedAssignments from '../dashboard/CompletedAssignments';
-import Grades from '../dashboard/Grades'
+import Grades from '../dashboard/Grades';
 import '../stylesheets/index.css';
 
 /*import React from 'react';
@@ -39,15 +40,15 @@ class Dashboard extends Component {
         //getCompleted();
     }
     
-    getGrades() {
-                var gradesList = fetch('http://swapr-dev.vip.gatech.edu/api/grades')
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(myJson) {
-            console.log(myJson);
-          });
-    }
+    // getGrades() {
+    //             var gradesList = fetch('http://swapr-dev.vip.gatech.edu/api/grades')
+    //       .then(function(response) {
+    //         return response.json();
+    //       })
+    //       .then(function(myJson) {
+    //         console.log(myJson);
+    //       });
+    // }
 
     render() {
         return(
@@ -70,22 +71,4 @@ class Dashboard extends Component {
 /*<div className="col-lg-3">
     <SideMenu/>
 </div>*/
-
-/*function SideMenu(props) {
-    return(
-        <div className="side-menu">
-            <nav class="navbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a className="navbar-brand" id="title">SWAPR</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="">Dashboard</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    );
-}*/
-
 export default Dashboard;

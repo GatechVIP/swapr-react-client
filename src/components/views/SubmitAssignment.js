@@ -24,8 +24,6 @@ class Assignment extends Component {
 class YoutubeVideo extends Component {
     render() {
         const opts = {
-            height: '390',
-            width: '640',
             playerVars: { // https://developers.google.com/youtube/player_parameters
                 autoplay: 1
             }
@@ -33,9 +31,10 @@ class YoutubeVideo extends Component {
 
         return (
             <YouTube
-                videoId="2g811Eo7K8U"
+                videoId="JLujPMiR-uE"
                 opts={opts}
                 onReady={this._onReady}
+                style="max-width: %75; max-height: %75;"
             />
         );
     }
@@ -48,7 +47,7 @@ class YoutubeVideo extends Component {
 
 
 function Description(props) {
-    return(<p>This is what the assignment is about</p>);
+    return(<p>The above video describes the assignment.</p>);
 }
 
 class Upload extends Component {

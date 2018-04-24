@@ -17,8 +17,6 @@ export default class GradeAssignment extends Component {
 class YoutubeVideo extends React.Component {
     render() {
       const opts = {
-        height: '720',
-        width: '1280',
         playerVars: { // https://developers.google.com/youtube/player_parameters
           autoplay: 1
         },
@@ -29,9 +27,10 @@ class YoutubeVideo extends React.Component {
         <div id="wrapper">
           <div id="yourdiv">
             <YouTube
-              videoId="FkoEEqyXpIA"
+              videoId="eBDPZrocv64"
               opts={opts}
               onReady={this._onReady}
+              // style="max-width: 100%; max-height: 100%;"
             />
           </div>
         </div>

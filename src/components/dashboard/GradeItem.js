@@ -6,14 +6,16 @@ import {Link} from "react-router-dom";
 export default class GradeItem extends React.Component {
   render(){
     return(
-      <tr>
-        <th style={{"width":"200px"}}>
-          {this.props.grade.title}
-        </th>
-        <th style={{"width":"200px"}}>
-          <p>{this.props.grade.score}</p>
-        </th>
-      </tr>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-6">
+            {this.props.grade.title}
+          </div>
+          <div class="col-lg-6" align="right">
+            <p>{this.props.grade.score}</p>  
+          </div>
+        </div>
+      </div>
     );
   }
 }
